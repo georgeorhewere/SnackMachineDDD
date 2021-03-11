@@ -92,13 +92,43 @@ namespace SnackMachine.Tests
            decimal expectedAmount)
         {
             Money money = new Money(oneCentCount, tenCentCount, quaterCount, oneDollarCount, fiveDollarCount, twentyDollarCount);
-
             Assert.True(money.Amount.Equals(expectedAmount));
-
-
-
         }
+        [Fact]
+        public void subtraction_of_two_moneys_produces_correct_result()
+        {
 
+            //Arrange
+            Money money1 = new Money(10, 10, 10, 10, 10, 10);
+            Money money2 = new Money(1, 2, 3, 4, 5, 6);
 
+            //Act
+            Money result = money1 - money2;
+            //Assert
+            Assert.Equal(9, result.OneCentCount);
+            Assert.Equal(8, result.TenCentCount);
+            Assert.Equal(7, result.QuaterCount);
+            Assert.Equal(6, result.OneDollarCount);
+            Assert.Equal(5, result.FiveDollarCount);
+            Assert.Equal(4, result.TwentyDollarCount);
+        }
+        [Fact]
+        public void cannot_subtract_more_than_exists()
+        {
+            //Arrange
+            Money money1 = new Money(0, 1, 0, 0, 0, 0);
+            Money money2 = new Money(1, 0, 0, 0, 0, 0);
+
+            //Act
+            Action action = () => { Money money = money1 - money2; };
+            
+            //Assert
+            Assert.Throws<InvalidOperationException>(action);
+            
+        }
     }
+ 
+
+
+    
 }
