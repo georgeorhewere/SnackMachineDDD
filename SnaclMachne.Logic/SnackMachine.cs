@@ -5,15 +5,10 @@ namespace SnackMachine.Logic
     public sealed class SnackMachine : Entity
     {
 
-        public Money MoneyInside { get; private set; }
-        public Money MoneyInTransaction { get; private set; }
+        public Money MoneyInside { get; private set; } = Money.None;
+        public Money MoneyInTransaction { get; private set; } = Money.None;
 
-        public SnackMachine()
-        {
-            MoneyInside = Money.None;
-            MoneyInTransaction = Money.None;
-
-        }
+      
 
         public void InsertMoney(Money money)
         {

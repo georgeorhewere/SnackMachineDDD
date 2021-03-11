@@ -11,7 +11,7 @@ namespace SnackMachine.Tests
         public void return_money_empties_money_in_transaction()
         {
             var snackMachine = new SnackMachine.Logic.SnackMachine();
-            snackMachine.InsertMoney(new Money(0, 0, 0, 1, 0, 0));
+            snackMachine.InsertMoney(Money.OneDollar);
 
             snackMachine.ReturnMoney();
 
