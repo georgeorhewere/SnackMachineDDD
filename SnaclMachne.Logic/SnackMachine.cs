@@ -7,7 +7,13 @@ namespace SnackMachine.Logic
 
         public Money MoneyInside { get; private set; }
         public Money MoneyInTransaction { get; private set; }
-        
+
+        public SnackMachine()
+        {
+            MoneyInside = new Money(0, 0, 0, 0, 0, 0);
+            MoneyInTransaction = new Money(0, 0, 0, 0, 0, 0);
+
+        }
 
         public void InsertMoney(Money money)
         {
@@ -16,7 +22,7 @@ namespace SnackMachine.Logic
 
         public void ReturnMoney()
         {
-            // MoneyInTransaction = 0;
+            MoneyInTransaction = new Money(0, 0, 0, 0, 0, 0);
         }
 
         public void BuySnack()
