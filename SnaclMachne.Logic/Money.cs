@@ -36,5 +36,30 @@
 
         }
 
+        protected override bool EqualsCore(Money other)
+        {
+            // check equality of eachof the properties
+            return OneCentCount == other.OneCentCount &&
+                   TenCentCount == other.TenCentCount &&
+                   QuaterCount == other.QuaterCount &&
+                   OneDollarCount == other.OneDollarCount &&
+                   FiveDollarCount == other.FiveDollarCount &&
+                   TwentyDollarCount == other.TwentyDollarCount;
+
+        }
+
+        protected override int GetHashCodeCore()
+        {
+            unchecked
+            {
+                int hashCode = OneCentCount;
+                hashCode = (hashCode * 397) ^ TenCentCount;
+                hashCode = (hashCode * 397) ^ QuaterCount;
+                hashCode = (hashCode * 397) ^ OneDollarCount;
+                hashCode = (hashCode * 397) ^ FiveDollarCount;
+                hashCode = (hashCode * 397) ^ TwentyDollarCount;
+                return hashCode;
+            }
+        }
     }
 }
