@@ -1,6 +1,6 @@
 ﻿namespace SnackMachine.Logic
 {
-    public sealed class Money
+    public sealed class Money : ValueObject<Money>
     {
         public int OneCentCount { get; set; }
         public int TenCentCount { get; set; }
