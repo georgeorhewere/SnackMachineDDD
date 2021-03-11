@@ -28,7 +28,7 @@ namespace SnackMachine.Logic
         public void BuySnack()
         {
             MoneyInside += MoneyInTransaction;
-            // MoneyInTransaction = 0;
+            MoneyInTransaction = Money.None;
 
         }
 

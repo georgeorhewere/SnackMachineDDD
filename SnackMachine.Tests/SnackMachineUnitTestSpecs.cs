@@ -42,10 +42,27 @@ namespace SnackMachine.Tests
             var snackMachine = new SnackMachine.Logic.SnackMachine();
             //Act
             var twoCent = Money.OneCent + Money.OneCent;
-
             Action action = () => { snackMachine.InsertMoney(twoCent); };
 
+            //Assert
             Assert.Throws<InvalidOperationException>(action);
+        }
+
+        [Fact]
+        public void money_in_transaction_goes_to_money_inside_after_purchase()
+        {
+            //Arrange
+            var snackMachine = new SnackMachine.Logic.SnackMachine();
+
+            //Act
+            snackMachine.InsertMoney(Money.OneDollar);
+            snackMachine.InsertMoney(Money.OneDollar);
+
+            snackMachine.BuySnack();
+
+            //Assert
+            Assert.True(snackMachine.MoneyInTransaction.Equals(Money.None));
+            Assert.True(snackMachine.MoneyInside.Amount.Equals(2m));
         }
     }
 
