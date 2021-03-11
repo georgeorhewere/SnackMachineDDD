@@ -53,6 +53,27 @@ namespace SnackMachine.Tests
             Assert.False(dollar.GetHashCode().Equals(hundredCents.GetHashCode()));
         }
 
+        //edge cases
+        [Theory]
+        [InlineData(-1,0,0,0,0,0)]
+        [InlineData(0, -2, 0, 0, 0, 0)]
+        [InlineData(0, 0, -3, 0, 0, 0)]
+        [InlineData(0, 0, 0, -4, 0, 0)]
+        [InlineData(0, 0, 0, 0, -5, 0)]
+        [InlineData(0, 0, 0, 0, 0, -6)]
+        public void Cannot_create_money_with_negative_value(int oneCentCount,
+            int tenCentCount,
+            int quaterCount,
+            int oneDollarCount,
+            int fiveDollarCount,
+            int twentyDollarCount)
+        {
+
+            Action action = () => new Money(oneCentCount, tenCentCount, quaterCount, oneDollarCount, fiveDollarCount, twentyDollarCount);
+            Assert.Throws<InvalidOperationException>(action);
+
+        }
+
 
     }
 }
