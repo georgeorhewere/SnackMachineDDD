@@ -4,6 +4,8 @@ namespace SnackMachine.Logic
 {
     public sealed class Money : ValueObject<Money>
     {
+        public static readonly Money None = new Money(0, 0, 0, 0, 0, 0);
+
         public int OneCentCount { get; }
         public int TenCentCount { get; }
         public int QuaterCount { get;  }

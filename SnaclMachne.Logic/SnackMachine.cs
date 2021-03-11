@@ -10,8 +10,8 @@ namespace SnackMachine.Logic
 
         public SnackMachine()
         {
-            MoneyInside = new Money(0, 0, 0, 0, 0, 0);
-            MoneyInTransaction = new Money(0, 0, 0, 0, 0, 0);
+            MoneyInside = Money.None;
+            MoneyInTransaction = Money.None;
 
         }
 
@@ -22,7 +22,7 @@ namespace SnackMachine.Logic
 
         public void ReturnMoney()
         {
-            MoneyInTransaction = new Money(0, 0, 0, 0, 0, 0);
+            MoneyInTransaction = Money.None;
         }
 
         public void BuySnack()
