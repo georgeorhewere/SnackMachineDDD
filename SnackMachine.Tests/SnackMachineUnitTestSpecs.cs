@@ -35,7 +35,18 @@ namespace SnackMachine.Tests
 
         }
 
+        [Fact]
+        public void cannot_insert_more_than_one_coin_or_note_at_a_time()
+        {
+            //Arrange
+            var snackMachine = new SnackMachine.Logic.SnackMachine();
+            //Act
+            var twoCent = Money.OneCent + Money.OneCent;
 
+            Action action = () => { snackMachine.InsertMoney(twoCent); };
+
+            Assert.Throws<InvalidOperationException>(action);
+        }
     }
 
 }

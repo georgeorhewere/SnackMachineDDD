@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace SnackMachine.Logic
 {
@@ -12,6 +13,10 @@ namespace SnackMachine.Logic
 
         public void InsertMoney(Money money)
         {
+            Money[] coinsAndNotes = { Money.OneCent, Money.TenCent, Money.Quarter, Money.OneDollar, Money.FiveDollar, Money.TwentyDollar };
+            if (!coinsAndNotes.Contains(money))
+                throw new InvalidOperationException();
+
             MoneyInTransaction += money;
         }
 
