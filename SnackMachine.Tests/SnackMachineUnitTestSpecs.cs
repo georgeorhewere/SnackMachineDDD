@@ -1,7 +1,7 @@
 ﻿using SnackMachine.Logic;
 using System;
 using Xunit;
-
+using static SnackMachine.Logic.Money;
 
 namespace SnackMachine.Tests
 {
@@ -12,7 +12,7 @@ namespace SnackMachine.Tests
         {
             //Arrange
             var snackMachine = new SnackMachine.Logic.SnackMachine();            
-            snackMachine.InsertMoney(Money.OneDollar);
+            snackMachine.InsertMoney(OneDollar);
             
             //Act
             snackMachine.ReturnMoney();
@@ -27,8 +27,8 @@ namespace SnackMachine.Tests
             var snackMachine = new SnackMachine.Logic.SnackMachine();
             
             //Act
-            snackMachine.InsertMoney(Money.OneCent);
-            snackMachine.InsertMoney(Money.OneDollar);
+            snackMachine.InsertMoney(OneCent);
+            snackMachine.InsertMoney(OneDollar);
 
             //Assert
             Assert.Equal(1.01m, snackMachine.MoneyInTransaction.Amount);
@@ -41,7 +41,7 @@ namespace SnackMachine.Tests
             //Arrange
             var snackMachine = new SnackMachine.Logic.SnackMachine();
             //Act
-            var twoCent = Money.OneCent + Money.OneCent;
+            var twoCent = OneCent + OneCent;
             Action action = () => { snackMachine.InsertMoney(twoCent); };
 
             //Assert
@@ -55,13 +55,13 @@ namespace SnackMachine.Tests
             var snackMachine = new SnackMachine.Logic.SnackMachine();
 
             //Act
-            snackMachine.InsertMoney(Money.OneDollar);
-            snackMachine.InsertMoney(Money.OneDollar);
+            snackMachine.InsertMoney(OneDollar);
+            snackMachine.InsertMoney(OneDollar);
 
             snackMachine.BuySnack();
 
             //Assert
-            Assert.True(snackMachine.MoneyInTransaction.Equals(Money.None));
+            Assert.True(snackMachine.MoneyInTransaction.Equals(None));
             Assert.True(snackMachine.MoneyInside.Amount.Equals(2m));
         }
     }
