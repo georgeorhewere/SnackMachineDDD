@@ -1,6 +1,7 @@
 ﻿using SnackMachine.Logic;
 using System;
 using Xunit;
+using FluentAssertions;
 using static SnackMachine.Logic.Money;
 
 namespace SnackMachine.Tests
@@ -61,7 +62,8 @@ namespace SnackMachine.Tests
             snackMachine.BuySnack();
 
             //Assert
-            Assert.True(snackMachine.MoneyInTransaction.Equals(None));
+            //Assert.True(snackMachine.MoneyInTransaction.Equals(None));
+            snackMachine.MoneyInTransaction.Should().Be(None);
             Assert.True(snackMachine.MoneyInside.Amount.Equals(2m));
         }
     }
