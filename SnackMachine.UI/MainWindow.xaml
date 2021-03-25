@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SnackMachine.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Snack Machine Demo" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Button x:Name="btnBuySnack" Grid.Row="0" Content="Buy a Snack" HorizontalAlignment="Left" Margin="286,24,0,0" VerticalAlignment="Top" Width="114" Height="37"/>
+        <Label x:Name="lblMoneyInserted" Grid.Row="0" Content="Money Inserted :" HorizontalAlignment="Left" Margin="260,66,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblMoneyInsertedVal" Grid.Row="0" Content="" HorizontalAlignment="Left" Margin="379,66,0,0" VerticalAlignment="Top"/>
+        
         
     </Grid>
 </Window>
