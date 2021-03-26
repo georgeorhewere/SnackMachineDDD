@@ -37,8 +37,20 @@
                     <Label Content="1" Padding="0" HorizontalAlignment="Center" FontSize="16" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
-            <Button x:Name="btnTenCent" Grid.Row="0" Grid.Column="1" Content="Put Ten Cent" HorizontalAlignment="Center" VerticalAlignment="Top" Width="114" Height="37" Margin="0,10"/>
-            <Button x:Name="btnTwentyCent" Grid.Row="0" Grid.Column="2" Content="Put Twenty Cent" HorizontalAlignment="Center" VerticalAlignment="Top" Width="114" Height="37" Margin="0,10" />
+            <Button x:Name="btnTenCent" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="114" Height="37" Margin="0,10">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Label Content="Put" VerticalAlignment="Center" FontSize="14" />
+                    <Label Content="{StaticResource CentImage}" Padding="0" />
+                    <Label Content="10" Padding="0" HorizontalAlignment="Center" FontSize="16" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnTwentyCent" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Width="114" Height="37" Margin="0,10">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Label Content="Put" VerticalAlignment="Center" FontSize="14" />
+                    <Label Content="{StaticResource CentImage}" Padding="0" />
+                    <Label Content="20" Padding="0" HorizontalAlignment="Center" FontSize="16" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
             <Button x:Name="btnOneDollar" Grid.Row="1" Grid.Column="0" Content="Put One Dollar" HorizontalAlignment="Center" VerticalAlignment="Top" Width="114" Height="37" Margin="0,10"/>
             <Button x:Name="btnFiveDollar" Grid.Row="1" Grid.Column="1" Content="Put Five Dollars" HorizontalAlignment="Center" VerticalAlignment="Top" Width="114" Height="37" Margin="0,10"/>
             <Button x:Name="btnTwentDollar" Grid.Row="1" Grid.Column="2" Content="Put Twenty Dollars" HorizontalAlignment="Center" VerticalAlignment="Top" Width="114" Height="37" Margin="0,10"/>
