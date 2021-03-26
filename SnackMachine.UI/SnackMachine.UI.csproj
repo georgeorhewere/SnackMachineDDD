@@ -109,5 +109,13 @@
   <ItemGroup>
     <Resource Include="cent.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\dollar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="dollar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
