@@ -16,11 +16,18 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Vertical" Grid.Row="0">
-            <Button x:Name="btnBuySnack" FontSize="16" Content="Buy a Snack" HorizontalAlignment="Left" Margin="201,24,0,0" VerticalAlignment="Top" Width="389" Height="37"/>
-            <Label x:Name="lblMoneyInserted" FontSize="16" Content="Money Inserted :" HorizontalAlignment="Left" Margin="240,10,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lblMoneyInsertedVal" FontSize="16" Content="" HorizontalAlignment="Left" Margin="377,-31,0,0" VerticalAlignment="Top"/>
-        </StackPanel>
+        <Grid Grid.Row="0" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>            
+            <Button x:Name="btnBuySnack" Grid.Row="0" FontSize="16" Content="Buy a Snack" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="389" Height="37"/>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">                
+                <Label x:Name="lblMoneyInserted" FontSize="16" Content="Money Inserted :" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label x:Name="lblMoneyInsertedVal" FontSize="16" Content="" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </StackPanel>
+        </Grid>
+        
 
         <Grid Grid.Row="1" Name="grdMoneyOptions">
             <Grid.RowDefinitions>
