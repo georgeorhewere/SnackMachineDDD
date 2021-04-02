@@ -117,5 +117,24 @@
   <ItemGroup>
     <Resource Include="dollar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cent1.png" />
+    <Resource Include="Images\cent10.png" />
+    <Resource Include="Images\cent25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\fivedollars.png" />
+    <Resource Include="Images\onedollar.png" />
+    <Resource Include="Images\twentydollars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cent1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cent10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cent25.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
