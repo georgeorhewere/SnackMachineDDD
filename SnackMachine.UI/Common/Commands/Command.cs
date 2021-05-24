@@ -31,7 +31,7 @@ namespace SnackMachine.UI.Common.Commands
 
         public void Execute(object parameter)
         {
-            this.execute(parameter);
+            execute(parameter);
         }
     }
 }

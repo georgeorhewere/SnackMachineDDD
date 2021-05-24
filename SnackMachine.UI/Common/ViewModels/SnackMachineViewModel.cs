@@ -9,11 +9,22 @@ namespace SnackMachine.UI.Common.ViewModels
         private readonly SnackMachine.Logic.SnackMachine snackMachine;
         public override string Caption => "Snack Machine DDD";
         public string MoneyInTransaction => snackMachine.MoneyInTransaction.Amount.ToString();
-        public Command InsertCentCommand { get; private set; }
+        public Command InsertCentCommand { get; private set; }        
+        public Command InsertTenCentCommand { get; private set; }
+        public Command InsertTwentyFiveCentCommand { get; private set; }
+        public Command InsertOneDollarCommand { get; private set; }
+        public Command InsertFiveDollarCommand { get; private set; }
+        public Command InsertTwentyDollarCommand { get; private set; }
+
         public SnackMachineViewModel(SnackMachine.Logic.SnackMachine _snackMachine)
         {
             snackMachine = _snackMachine;
             InsertCentCommand = new Command(o => InsertMoney(Money.OneCent));
+            InsertTenCentCommand = new Command(o => InsertMoney(Money.TenCent));
+            InsertTwentyFiveCentCommand = new Command(o => InsertMoney(Money.Quarter));
+            InsertOneDollarCommand = new Command(o => InsertMoney(Money.OneDollar));
+            InsertFiveDollarCommand = new Command(o => InsertMoney(Money.FiveDollar));
+            InsertTwentyDollarCommand = new Command(o => InsertMoney(Money.TwentyDollar));
         }
 
         private void InsertMoney(Money money)

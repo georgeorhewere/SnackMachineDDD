@@ -50,35 +50,45 @@
                     <Label Content="1" Padding="0" HorizontalAlignment="Center" FontSize="16" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
-            <Button x:Name="btnTenCent" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="114" Height="37" Margin="0,10">
+            <Button x:Name="btnTenCent" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="114" Height="37" Margin="0,10"
+                    Command="{Binding Path=InsertTenCentCommand}"
+                    >
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <Label Content="Put" VerticalAlignment="Center" FontSize="14" />
                     <Label Name="lblTenCent" Content="{StaticResource CentImage}" Padding="0" />
                     <Label Content="10" Padding="0" HorizontalAlignment="Center" FontSize="16" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
-            <Button x:Name="btnTwentyFiveCent" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="114" Height="37" Margin="0,10">
+            <Button x:Name="btnTwentyFiveCent" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="114" Height="37" Margin="0,10"
+                    Command="{Binding Path=InsertTwentyFiveCentCommand}"
+                    >
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <Label Content="Put" VerticalAlignment="Center" FontSize="14" />
                     <Label Name="lblTwentyFiveCent" Content="{StaticResource CentImage}" Padding="0" />
                     <Label Content="25" Padding="0" HorizontalAlignment="Center" FontSize="16" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
-            <Button x:Name="btnOneDollar" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="114" Height="37" Margin="0,10">
+            <Button x:Name="btnOneDollar" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="114" Height="37" Margin="0,10"
+                    Command="{Binding Path=InsertOneDollarCommand}"
+                    >
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <Label Content="Put" VerticalAlignment="Center" FontSize="14" />
                     <Label Content="{StaticResource DollarImage}" Padding="0" />
                     <Label Content="1" Padding="0" HorizontalAlignment="Center" FontSize="16" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
-            <Button x:Name="btnFiveDollar" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Width="114" Height="37" Margin="0,10">
+            <Button x:Name="btnFiveDollar" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Width="114" Height="37" Margin="0,10"
+                    Command="{Binding Path=InsertFiveDollarCommand}"
+                    >
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <Label Content="Put" VerticalAlignment="Center" FontSize="14" />
                     <Label Content="{StaticResource DollarImage}" Padding="0" />
                     <Label Content="5" Padding="0" HorizontalAlignment="Center" FontSize="16" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
-            <Button x:Name="btnTwentDollar" Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="114" Height="37" Margin="0,10">
+            <Button x:Name="btnTwentDollar" Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="114" Height="37" Margin="0,10"
+                    Command="{Binding Path=InsertTwentyDollarCommand}"
+                    >
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <Label Content="Put" VerticalAlignment="Center" FontSize="14" />
                     <Label Content="{StaticResource DollarImage}" Padding="0" />
