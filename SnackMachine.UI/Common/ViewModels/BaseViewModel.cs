@@ -27,6 +27,8 @@ namespace SnackMachine.UI.Common.ViewModels
             OnPropertyChanged(property);
         }
 
+        public virtual string Caption { get; }
+
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SnackMachine.UI.Common.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace SnackMachine.UI
         public MainWindow()
         {
             InitializeComponent();
+            SnackMachineViewModel model = new SnackMachineViewModel();
+            DataContext = model;
         }
     }
 }
