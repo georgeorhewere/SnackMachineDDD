@@ -24,7 +24,7 @@
             <Button x:Name="btnBuySnack" Grid.Row="0" FontSize="16" Content="Buy a Snack" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="389" Height="37"/>
             <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">                
                 <Label x:Name="lblMoneyInserted" FontSize="16" Content="Money Inserted :" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <Label x:Name="lblMoneyInsertedVal" FontSize="16" Content="" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label x:Name="lblMoneyInsertedVal" FontSize="16" FontWeight="Bold" Content="{Binding MoneyInTransaction}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             </StackPanel>
         </Grid>
         

@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace SnackMachine.UI
 {
     /// <summary>
@@ -21,10 +22,10 @@ namespace SnackMachine.UI
     /// </summary>
     public partial class MainWindow : Window
     {
+        SnackMachineViewModel model = new SnackMachineViewModel(new Logic.SnackMachine());
         public MainWindow()
         {
-            InitializeComponent();
-            SnackMachineViewModel model = new SnackMachineViewModel();
+            InitializeComponent();            
             DataContext = model;
         }
     }

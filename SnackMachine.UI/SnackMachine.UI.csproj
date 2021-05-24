@@ -146,5 +146,11 @@
   <ItemGroup>
     <Resource Include="twentydollars.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SnaclMachne.Logic\SnackMachine.Logic.csproj">
+      <Project>{2475824c-ce00-4a54-8c01-373dfe0c1d5e}</Project>
+      <Name>SnackMachine.Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
