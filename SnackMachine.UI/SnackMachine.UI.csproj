@@ -66,6 +66,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Common\Commands\Command.cs" />
     <Compile Include="Common\ViewModels\BaseViewModel.cs" />
     <Compile Include="Common\ViewModels\SnackMachineViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
