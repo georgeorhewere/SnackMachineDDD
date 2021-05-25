@@ -103,5 +103,10 @@ namespace SnackMachine.Logic
                 return hashCode;
             }
         }
+
+        public override string ToString()
+        {
+            return Amount < 1 ? "¢"+ (Amount * 100).ToString("0") : "$"+ Amount.ToString("0.00") ;
+        }
     }
 }

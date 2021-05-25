@@ -30,7 +30,6 @@ namespace SnackMachine.Logic
         {
             MoneyInside += MoneyInTransaction;
             MoneyInTransaction = None;
-
         }
 
     }

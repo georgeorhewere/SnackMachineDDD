@@ -8,7 +8,7 @@ namespace SnackMachine.UI.Common.ViewModels
     {
         private readonly SnackMachine.Logic.SnackMachine snackMachine;
         public override string Caption => "Snack Machine DDD";
-        public string MoneyInTransaction => snackMachine.MoneyInTransaction.Amount.ToString();
+        public string MoneyInTransaction => snackMachine.MoneyInTransaction.ToString();
         public Command InsertCentCommand { get; private set; }        
         public Command InsertTenCentCommand { get; private set; }
         public Command InsertTwentyFiveCentCommand { get; private set; }
