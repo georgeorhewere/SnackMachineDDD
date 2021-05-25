@@ -102,7 +102,7 @@
                 <Label x:Name="lblAddMoneyMessage"  FontSize="16" Margin="0,5,0,0" HorizontalAlignment="Center" Content="{Binding Message}" ></Label>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Label x:Name="lblMoneyInsidePre"  FontSize="16" Margin="0,5,0,0" HorizontalAlignment="Center" Content="Money Inside :" ></Label>
-                    <Label x:Name="lblMoneyInside"  FontSize="16" Margin="0,5,0,0" HorizontalAlignment="Center" Content="" ></Label>                    
+                    <Label x:Name="lblMoneyInside"  FontSize="16" FontWeight="Bold" Margin="0,5,0,0" HorizontalAlignment="Center" Content="{Binding MoneyInside}" ></Label>                    
                 </StackPanel>
             </StackPanel>
             
@@ -120,27 +120,28 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,3">
                 <Image Name="imgOneCent" Source="cent1.png" />
-                <Label x:Name="lblMachineOneCent" VerticalAlignment="Center" FontSize="12" Margin="1,0,0,0"></Label>
+                <Label x:Name="lblMachineOneCent" VerticalAlignment="Center" Content="{Binding MoneyInside.OneCentCount}"
+                       FontSize="12" Margin="1,0,0,0"></Label>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,3">
                 <Image Name="imgTenCent" Source="cent10.png" />
-                <Label x:Name="lblMachineTenCent" VerticalAlignment="Center" FontSize="12" Margin="1,0,0,0"></Label>
+                <Label x:Name="lblMachineTenCent" Content="{Binding MoneyInside.TenCentCount}" VerticalAlignment="Center" FontSize="12" Margin="1,0,0,0"></Label>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,3">
                 <Image Name="imgTwentyFiveCent" Source="cent25.png" />
-                <Label x:Name="lblMachineTwentyFiveCent" VerticalAlignment="Center" FontSize="12" Margin="1,0,0,0"></Label>
+                <Label x:Name="lblMachineTwentyFiveCent" Content="{Binding MoneyInside.QuaterCount}" VerticalAlignment="Center" FontSize="12" Margin="1,0,0,0"></Label>
             </StackPanel>
             <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5">
                 <Image Name="imgOneDollar" Source="onedollar.png" />
-                <Label x:Name="lblMachineOneDollar" VerticalAlignment="Center" FontSize="12" Margin="1,0,0,0"></Label>
+                <Label x:Name="lblMachineOneDollar" Content="{Binding MoneyInside.OneDollarCount}" VerticalAlignment="Center" FontSize="12" Margin="1,0,0,0"></Label>
             </StackPanel>
             <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5">
                 <Image Name="imgFiveDollar" Source="fivedollars.png" />
-                <Label x:Name="lblMachineFiveDollar" VerticalAlignment="Center" FontSize="12" Margin="1,0,0,0"></Label>
+                <Label x:Name="lblMachineFiveDollar" Content="{Binding MoneyInside.FiveDollarCount}" VerticalAlignment="Center" FontSize="12" Margin="1,0,0,0"></Label>
             </StackPanel>
             <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5">
                 <Image Name="imgTwentyDollar" Source="twentydollars.png" />
-                <Label x:Name="lblMachineTwentyDollar" VerticalAlignment="Center" FontSize="12" Margin="1,0,0,0"></Label>
+                <Label x:Name="lblMachineTwentyDollar" Content="{Binding MoneyInside.TwentyDollarCount}" VerticalAlignment="Center" FontSize="12" Margin="1,0,0,0"></Label>
             </StackPanel>
         </Grid>
         

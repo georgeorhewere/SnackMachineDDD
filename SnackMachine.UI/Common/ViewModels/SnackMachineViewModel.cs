@@ -18,6 +18,7 @@ namespace SnackMachine.UI.Common.ViewModels
             } 
         }
         public string MoneyInTransaction => snackMachine.MoneyInTransaction.ToString();
+        public Money MoneyInside => snackMachine.MoneyInTransaction + snackMachine.MoneyInside;
         public Command InsertCentCommand { get; private set; }        
         public Command InsertTenCentCommand { get; private set; }
         public Command InsertTwentyFiveCentCommand { get; private set; }
@@ -44,13 +45,15 @@ namespace SnackMachine.UI.Common.ViewModels
         {
             snackMachine.ReturnMoney();
             Notify(nameof(MoneyInTransaction));
+            Notify(nameof(MoneyInside));
             Message = "Your money has been returned";
         }
 
         private void InsertMoney(Money money)
         {
             snackMachine.InsertMoney(money);
-            Notify("MoneyInTransaction");
+            Notify(nameof(MoneyInTransaction));
+            Notify(nameof(MoneyInside));
             Message = $"You have inserted { money }";
 
         }
