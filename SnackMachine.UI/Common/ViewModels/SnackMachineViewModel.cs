@@ -8,6 +8,14 @@ namespace SnackMachine.UI.Common.ViewModels
     {
         private readonly SnackMachine.Logic.SnackMachine snackMachine;
         public override string Caption => "Snack Machine DDD";
+        private string message;
+        public string Message { 
+            get => message; 
+            set { 
+                message = value; 
+                Notify("Message"); 
+            } 
+        }
         public string MoneyInTransaction => snackMachine.MoneyInTransaction.ToString();
         public Command InsertCentCommand { get; private set; }        
         public Command InsertTenCentCommand { get; private set; }
@@ -15,6 +23,8 @@ namespace SnackMachine.UI.Common.ViewModels
         public Command InsertOneDollarCommand { get; private set; }
         public Command InsertFiveDollarCommand { get; private set; }
         public Command InsertTwentyDollarCommand { get; private set; }
+        
+        
 
         public SnackMachineViewModel(SnackMachine.Logic.SnackMachine _snackMachine)
         {
@@ -31,6 +41,8 @@ namespace SnackMachine.UI.Common.ViewModels
         {
             snackMachine.InsertMoney(money);
             Notify("MoneyInTransaction");
+            Message = $"You have inserted { money }";
+
         }
     }
 }
