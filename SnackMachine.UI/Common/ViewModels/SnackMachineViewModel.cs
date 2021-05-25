@@ -7,6 +7,7 @@ namespace SnackMachine.UI.Common.ViewModels
     public class SnackMachineViewModel: BaseViewModel
     {
         private readonly SnackMachine.Logic.SnackMachine snackMachine;
+
         public override string Caption => "Snack Machine DDD";
         private string message;
         public string Message { 
@@ -23,8 +24,9 @@ namespace SnackMachine.UI.Common.ViewModels
         public Command InsertOneDollarCommand { get; private set; }
         public Command InsertFiveDollarCommand { get; private set; }
         public Command InsertTwentyDollarCommand { get; private set; }
-        
-        
+        public Command ReturnMoneyCommand { get; private set; }
+
+
 
         public SnackMachineViewModel(SnackMachine.Logic.SnackMachine _snackMachine)
         {
@@ -35,6 +37,14 @@ namespace SnackMachine.UI.Common.ViewModels
             InsertOneDollarCommand = new Command(o => InsertMoney(Money.OneDollar));
             InsertFiveDollarCommand = new Command(o => InsertMoney(Money.FiveDollar));
             InsertTwentyDollarCommand = new Command(o => InsertMoney(Money.TwentyDollar));
+            ReturnMoneyCommand = new Command(o => ReturnMoney());
+        }
+
+        private void ReturnMoney()
+        {
+            snackMachine.ReturnMoney();
+            Notify(nameof(MoneyInTransaction));
+            Message = "Your money has been returned";
         }
 
         private void InsertMoney(Money money)
