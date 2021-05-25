@@ -126,6 +126,25 @@ namespace SnackMachine.Tests
             Assert.Throws<InvalidOperationException>(action);
             
         }
+
+        [Theory]
+        [InlineData(1, 0, 0, 0, 0, 0, "¢1")]
+        [InlineData(1, 2, 0, 0, 0, 0, "¢21")]
+        [InlineData(1, 2, 3, 0, 0, 0, "¢96")]
+        [InlineData(0, 0, 0, 3, 0, 0, "$3")]
+        public void should_return_money_symbol_on_to_string(int oneCentCount,
+           int tenCentCount,
+           int quaterCount,
+           int oneDollarCount,
+           int fiveDollarCount,
+           int twentyDollarCount,
+           string expectedResult)
+        {
+
+            Money money = new Money(oneCentCount, tenCentCount, quaterCount, oneDollarCount, fiveDollarCount, twentyDollarCount);
+            Assert.True(money.ToString().Equals(expectedResult));
+
+        }
     }
  
 
