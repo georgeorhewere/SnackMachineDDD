@@ -26,8 +26,7 @@ namespace SnackMachine.UI.Common.ViewModels
         public Command InsertFiveDollarCommand { get; private set; }
         public Command InsertTwentyDollarCommand { get; private set; }
         public Command ReturnMoneyCommand { get; private set; }
-
-
+        public Command BuySnackCommand { get; private set; }
 
         public SnackMachineViewModel(SnackMachine.Logic.SnackMachine _snackMachine)
         {
@@ -39,23 +38,35 @@ namespace SnackMachine.UI.Common.ViewModels
             InsertFiveDollarCommand = new Command(() => InsertMoney(Money.FiveDollar));
             InsertTwentyDollarCommand = new Command(() => InsertMoney(Money.TwentyDollar));
             ReturnMoneyCommand = new Command(() => ReturnMoney());
+            BuySnackCommand = new Command(() => BuySnack());
+        }
+
+        private void BuySnack()
+        {
+            snackMachine.BuySnack();
+            string uiMessage = "Snack has been purchased";
+            UpdateUI(uiMessage);
         }
 
         private void ReturnMoney()
         {
             snackMachine.ReturnMoney();
-            Notify(nameof(MoneyInTransaction));
-            Notify(nameof(MoneyInside));
-            Message = "Your money has been returned";
+            string uiMessage = "Your money has been returned";
+            UpdateUI(uiMessage);            
         }
 
-        private void InsertMoney(Money money)
+        private void InsertMoney(Money coinOrNote)
         {
-            snackMachine.InsertMoney(money);
+            snackMachine.InsertMoney(coinOrNote);
+            string uiMessage = $"You have inserted { coinOrNote }";
+            UpdateUI(uiMessage);            
+        }
+
+        private void UpdateUI(string _message)
+        {
             Notify(nameof(MoneyInTransaction));
             Notify(nameof(MoneyInside));
-            Message = $"You have inserted { money }";
-
+            Message = _message;
         }
     }
 }
