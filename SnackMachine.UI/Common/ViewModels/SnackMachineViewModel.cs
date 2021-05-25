@@ -31,13 +31,13 @@ namespace SnackMachine.UI.Common.ViewModels
         public SnackMachineViewModel(SnackMachine.Logic.SnackMachine _snackMachine)
         {
             snackMachine = _snackMachine;
-            InsertCentCommand = new Command(o => InsertMoney(Money.OneCent));
-            InsertTenCentCommand = new Command(o => InsertMoney(Money.TenCent));
-            InsertTwentyFiveCentCommand = new Command(o => InsertMoney(Money.Quarter));
-            InsertOneDollarCommand = new Command(o => InsertMoney(Money.OneDollar));
-            InsertFiveDollarCommand = new Command(o => InsertMoney(Money.FiveDollar));
-            InsertTwentyDollarCommand = new Command(o => InsertMoney(Money.TwentyDollar));
-            ReturnMoneyCommand = new Command(o => ReturnMoney());
+            InsertCentCommand = new Command(() => InsertMoney(Money.OneCent));
+            InsertTenCentCommand = new Command(() => InsertMoney(Money.TenCent));
+            InsertTwentyFiveCentCommand = new Command(() => InsertMoney(Money.Quarter));
+            InsertOneDollarCommand = new Command(() => InsertMoney(Money.OneDollar));
+            InsertFiveDollarCommand = new Command(() => InsertMoney(Money.FiveDollar));
+            InsertTwentyDollarCommand = new Command(() => InsertMoney(Money.TwentyDollar));
+            ReturnMoneyCommand = new Command(() => ReturnMoney());
         }
 
         private void ReturnMoney()

@@ -9,8 +9,8 @@ namespace SnackMachine.UI.Common.Commands
 {
     public class Command : ICommand
     {
-        private Action<object> execute;
-        private Func<object, bool> canExecute;
+        private Action execute;
+        private Func<bool> canExecute;
 
         public event EventHandler CanExecuteChanged
         {
@@ -18,20 +18,20 @@ namespace SnackMachine.UI.Common.Commands
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public Command(Action<object> execute)
+        public Command(Action execute)
         {
             this.execute = execute;
-            canExecute = o => true;
+            canExecute = () => true;
         }
 
         public bool CanExecute(object parameter)
         {
-            return canExecute == null || canExecute(parameter);
+            return canExecute == null || canExecute();
         }
 
         public void Execute(object parameter)
         {
-            execute(parameter);
+            execute();
         }
     }
 }
